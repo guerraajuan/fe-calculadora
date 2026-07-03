@@ -1,0 +1,9 @@
+# Dependencias de Node (¡súper importante no subirlas!)
+node_modules/
+
+# Archivo de bloqueo de versiones
+package-lock.json
+
+# Carpetas de compilación o builds de prueba
+dist/
+build/

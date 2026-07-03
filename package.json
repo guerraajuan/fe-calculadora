@@ -1,0 +1,13 @@
+{
+  "name": "calculadora-ci-cd",
+  "version": "1.0.0",
+  "description": "Proyecto para probar flujos de CI/CD",
+  "main": "src/calculator.js",
+  "scripts": {
+    "test": "jest",
+    "build": "echo 'Compilando el proyecto...' && mkdir -p dist && cp src/calculator.js dist/"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
