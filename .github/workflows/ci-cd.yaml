@@ -8,10 +8,7 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x, 22.x] # Correrá 3 veces en paralelo
-
+   
     steps:
       - name: Checkout del código
         uses: actions/checkout@v7
@@ -19,7 +16,7 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 20.x
 
       - name: Instalar dependencias
         run: npm install
