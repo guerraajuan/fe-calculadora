@@ -42,15 +42,15 @@ jobs:
         with:
           path: '.' # Sube todo el proyecto (que contiene el index.html en la raíz)
 
-  # 2. ETAPA DE DESPLIEGUE CONTINUO (CD) - Publicar en internet
-  deploy:
-    needs: build-and-test # ESENCIAL: Solo se ejecuta si el Job de arriba termina en verde (exitoso)
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-    - name: Desplegar en GitHub Pages master
-      id: deployment
-      uses: actions/deploy-pages@v4
+  # # 2. ETAPA DE DESPLIEGUE CONTINUO (CD) - Publicar en internet
+  # deploy:
+  #   needs: build-and-test # ESENCIAL: Solo se ejecuta si el Job de arriba termina en verde (exitoso)
+  #   runs-on: ubuntu-latest
+  #   environment:
+  #     name: github-pages
+  #     url: ${{ steps.deployment.outputs.page_url }}
+  #   steps:
+  #   - name: Desplegar en GitHub Pages master
+  #     id: deployment
+  #     uses: actions/deploy-pages@v4
 
