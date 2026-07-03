@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 'HOla'
-        run: echo 'hOLA MUNDO'
+      - uses: actions/checkout@v7
+      - name: muestra contenido de repositoio
+        run: ls -la 
         
 
