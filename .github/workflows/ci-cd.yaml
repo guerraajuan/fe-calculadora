@@ -31,6 +31,7 @@ jobs:
         run: npm test
 
       - name: Compilar proyecto (CD)
+        if: github.ref == 'refs/heads/master' # Solo se ejecuta si estás en master
         run: npm run build
 
 
