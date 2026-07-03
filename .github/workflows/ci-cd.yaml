@@ -1,0 +1,16 @@
+name: Flujo CI-CD
+
+on: 
+  push:
+    branches: [master]
+
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'HOla'
+        run: echo 'hOLA MUNDO'
+        
+
