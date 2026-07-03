@@ -27,3 +27,6 @@ jobs:
       - name: Compilar proyecto (CD)
         run: npm run build
 
+      - name: Informar final
+        run: echo 'proceso finalizado'
+
