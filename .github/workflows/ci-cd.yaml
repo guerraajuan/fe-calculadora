@@ -31,7 +31,24 @@ jobs:
         run: npm test
 
       - name: Compilar proyecto (CD)
-        if: github.ref == 'refs/heads/master' # Solo se ejecuta si estás en master
         run: npm run build
+      
+      # Guardamos los archivos listos para la web (el HTML y el JS) como un artefacto temporal
+      - name: Subir archivos para despliegue
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.' # Sube todo el proyecto (que contiene el index.html en la raíz)
+
+  # 2. ETAPA DE DESPLIEGUE CONTINUO (CD) - Publicar en internet
+  deploy:
+    needs: build-and-test # ESENCIAL: Solo se ejecuta si el Job de arriba termina en verde (exitoso)
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+    - name: Desplegar en GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
 
 

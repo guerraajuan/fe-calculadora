@@ -6,4 +6,7 @@ function restar(a, b) {
   return a - b;
 }
 
-module.exports = { sumar, restar };
+// Esto evita que el navegador lance un error, pero permite que Jest siga funcionando
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { sumar, restar };
+}
