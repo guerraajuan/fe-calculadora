@@ -3,7 +3,7 @@ name: Flujo CI-CD
 on: 
   push:
     branches: 
-      - 'feat*'
+      - 'master'
 
 # PERMISOS GLOBALES: Ahora aplican tanto para las pruebas como para el despliegue
 permissions:
